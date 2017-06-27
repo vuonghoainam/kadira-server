@@ -50,10 +50,10 @@ while [[ true ]]; do
   dumpEnvVarsTo $ENV_FILE_NAME
   set -x;
   if [ -z ${START_TIME+x} ] || [ -z ${END_TIME+x} ]; then
-      sh -c 'mongo $(pick-mongo-primary $MONGO_METRICS_URL) profiles/$PROFILE.js providers/$PROVIDER.js $ENV_FILE_NAME lib.js mapreduce.js incremental-aggregation.js'
+      exec mongo $(pick-mongo-primary $MONGO_METRICS_URL) profiles/$PROFILE.js providers/$PROVIDER.js $ENV_FILE_NAME lib.js mapreduce.js incremental-aggregation.js
       #mongo $(pick-mongo-primary $MONGO_METRICS_URL) profiles/$PROFILE.js providers/$PROVIDER.js $ENV_FILE_NAME lib.js mapreduce.js incremental-aggregation.js;
   else
-      sh -c 'mongo $(pick-mongo-primary $MONGO_METRICS_URL) profiles/$PROFILE.js providers/$PROVIDER.js $ENV_FILE_NAME lib.js mapreduce.js batch-aggregation.js'
+      exec mongo $(pick-mongo-primary $MONGO_METRICS_URL) profiles/$PROFILE.js providers/$PROVIDER.js $ENV_FILE_NAME lib.js mapreduce.js batch-aggregation.js
       #mongo $(pick-mongo-primary $MONGO_METRICS_URL) profiles/$PROFILE.js providers/$PROVIDER.js $ENV_FILE_NAME lib.js mapreduce.js batch-aggregation.js;
   fi
   set +x;
