@@ -13,7 +13,7 @@ FROM node:4.8.3-alpine
 RUN \
  echo 'http://dl-3.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
  apk upgrade --update && \
- apk add --no-cache ca-certificates mongodb
+ apk add --no-cache ca-certificates
 
 WORKDIR /app
 
