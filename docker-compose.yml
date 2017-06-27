@@ -7,11 +7,13 @@ services:
     environment:
       - PORT=80
       - MONGO_URL=mongodb://dev:chord@localhost:27017/test?replicaSet=rs0
+    network_mode: "host"
   kadira-rma:
     build: ./kadira-rma
     environment:
       - MONGO_SHARD=one
       - MONGO_URL=mongodb://dev:chord@localhost:27017/test?replicaSet=rs0
+    network_mode: "host"
   kadira-api:
     build: ./kadira-api
     ports:
@@ -29,10 +31,12 @@ services:
       #- TRELLO_TOKEN=xxxxxxxxx
       #- TRELLO_ORG_ID=xxxxxxxxx
       #- TRELLO_MAIN_BOARD_ID=xxxxxxxxx
+    network_mode: "host"
   kadira-ui:
     build: ./kadira-ui
     ports:
       - "10003:80"
+    network_mode: "host"
     environment:
       - PORT=80
       - ROOT_URL=http://localhost:10003
@@ -47,16 +51,11 @@ services:
   #  build: ./kadira-alertsman
   #  ports:
   #    - "10004:80"
+  #  network_mode: "host"
   #  environment:
   #    - PORT=80
   #    - MONGO_APP_URL=mongodb://dev:chord@localhost:27017/test?replicaSet=rs0
   #    - MONGO_SHARD_URL_one=mongodb://dev:chord@localhost:27017/test?replicaSet=rs0
   #mongo:
-  #  build: ./mongo
-  #  ports:
-  #    - "27017:27017"
-  #  environment:
-  #    - PORT=27017
-  #     - MONGO_APP_URL=mongodb://dev:chord@localhost:27017/test?replicaSet=rs0
-  #     - MONGO_SHARD_URL_one=mongodb://dev:chord@localhost:27017/test?replicaSet=rs0
-
+  #   image: mongo:latest --storageEngine=wiredTiger
+  #   network_mode: "host"
