@@ -22,6 +22,6 @@ RUN npm install
 ADD . /app
 
 ENV MONGO_SHARD one
-ENV MONGO_URL mongodb://dev:chord@localhost:27017/test?replicaSet=rs0
+ENV MONGO_URL mongodb://dev:chord@localhost:27017/kadira
 
 CMD [ "npm", "run", "start" ]

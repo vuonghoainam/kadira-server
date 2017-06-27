@@ -11,6 +11,6 @@ RUN npm install
 ADD . /app
 
 ENV PORT 80
-ENV MONGO_URL mongodb://dev:chord@localhost:27017/test?replicaSet=rs0
+ENV MONGO_URL mongodb://dev:chord@localhost:27017/kadira
 
 CMD [ "npm", "run", "start" ]
