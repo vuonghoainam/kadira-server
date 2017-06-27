@@ -8,12 +8,13 @@
 #   apk add --no-cache ca-certificates nodejs mongodb
 #
 
-FROM node:4.8.3-alpine
+#FROM node:4.8.3-alpine
+FROM angeloocana/alpine-nodejs-mongodb
 
-RUN \
- echo 'http://dl-3.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
- apk upgrade --update && \
- apk add --no-cache ca-certificates mongodb
+#RUN \
+# echo 'http://dl-3.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
+# apk upgrade --update && \
+# apk add --no-cache ca-certificates mongodb
 
 WORKDIR /app
 
