@@ -13,7 +13,7 @@ FROM anshulguleria/ubuntu-node-mongo:devel
 #FROM angeloocana/alpine-nodejs-mongodb
 
 WORKDIR /app
-#COPY entry.sh /app
+COPY entry.sh /app
 ADD ./package.json /app/
 RUN npm install
 ADD . /app
@@ -23,7 +23,6 @@ ADD . /app
 ENV MONGO_SHARD one
 ENV MONGO_URL mongodb://dev:chord@localhost:27017/kadira
 
-
-ENTRYPOINT mongod
+ENTRYPOINT ["/app/entry.sh"]
 CMD [ "npm", "run", "start"]
 
