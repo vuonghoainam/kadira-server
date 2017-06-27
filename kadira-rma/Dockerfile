@@ -21,10 +21,10 @@ ADD ./package.json /app/
 RUN npm install
 ADD . /app
 
-VOLUME /data/db
+#VOLUME /data/db
 
 ENV MONGO_SHARD one
 ENV MONGO_URL mongodb://dev:chord@localhost:27017/kadira
 
-CMD [ "npm", "run", "start" , "mongod"]
+CMD [ "npm", "run", "start"]
 
