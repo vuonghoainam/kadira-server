@@ -1,5 +1,5 @@
-#FROM meteorhacks/meteord:base
-FROM kadirahq/meteord:base
+FROM meteorhacks/meteord:base
+#FROM kadirahq/meteord:base
 
 COPY ./ /app
 ENV METEOR_ALLOW_SUPERUSER 1
