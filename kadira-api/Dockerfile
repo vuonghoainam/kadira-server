@@ -11,8 +11,8 @@ RUN npm install
 ADD . /app
 
 ENV PORT 80
-ENV MONGO_APP_URL mongodb://dbserver/apm
-ENV MONGO_SHARD_URL_one mongodb://dbserver/apm
+ENV MONGO_APP_URL mongodb://dev:chord@localhost:27017/test?replicaSet=rs0
+ENV MONGO_SHARD_URL_one mongodb://dev:chord@localhost:27017/test?replicaSet=rs0
 ENV MAIL_URL smtp://user:pass@smtp.mailgun.org:587
 ENV AUTH_SECRET secret
 ENV JWT_SECRET secret
