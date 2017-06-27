@@ -51,4 +51,12 @@ services:
   #    - PORT=80
   #    - MONGO_APP_URL=mongodb://dev:chord@localhost:27017/test?replicaSet=rs0
   #    - MONGO_SHARD_URL_one=mongodb://dev:chord@localhost:27017/test?replicaSet=rs0
+  #mongo:
+  #  build: mongo
+  #  ports:
+  #    - "27017:27017"
+  #  environment:
+  #    - PORT=27017
+  #     - MONGO_APP_URL=mongodb://dev:chord@localhost:27017/test?replicaSet=rs0
+  #     - MONGO_SHARD_URL_one=mongodb://dev:chord@localhost:27017/test?replicaSet=rs0
 
